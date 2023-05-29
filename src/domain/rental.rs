@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 use tokio_postgres::Row;
 
 #[derive(Debug, Serialize, Deserialize, ToSql, FromSql)]
+#[postgres(name = "rental_status")]
 pub enum RentalStatus{
     Renting ,
     Return
