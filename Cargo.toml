@@ -5,6 +5,14 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "helloworld-server"
+path = "src/grpc/server.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "helloworld-client"
+path = "src/grpc/client.rs"
+
 [dependencies]
 axum = "0.6.18"
 tokio = { version = "1.28.0", features = ["full"] }
@@ -14,3 +22,7 @@ postgres-types = { version = "0.X.X", features = ["derive"] }
 chrono = { version = "0.4.24", features = ["serde"] }
 serde = { version = "1.0.162", features=["derive"] }
 serde_with = "3.0.0"
+tonic = "0.9.2"
+
+[build-dependencies]
+tonic-build = "0.9"
