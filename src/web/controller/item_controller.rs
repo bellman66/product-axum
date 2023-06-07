@@ -1,8 +1,6 @@
 use std::sync::Arc;
 use axum::extract::State;
-use axum::http::StatusCode;
 use axum::Json;
-use chrono::{NaiveDateTime};
 use tokio_postgres::Client;
 use crate::domain::item::RentedItem;
 
